@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Dashboard - PostgreSQL</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Dynamic Dashboard</h1>
+        <p>
+          Build powerful SQL queries with intuitive filtering and
+          cross-collection joins
+        </p>
+      </header>
+
+      <main class="main-content">
+        <!-- Filter Section -->
+        <section class="section filters-section">
+          <h2 class="section-title">
+            <span>🔍</span> Data Filters
+          </h2>
+          <p class="section-subtitle">Specify conditions to find your data (e.g., region = West)</p>
+          
+          <div id="filters"></div>
+          
+          <button id="btn-add-filter" class="btn-primary btn-small" style="margin-top: 1rem;">
+            ➕ Add Filter
+          </button>
+        </section>
+              
+        <!-- Aggregation Section -->
+        <section class="section aggregation-section">
+          <h2 class="section-title">
+            <span>📊</span> Calculate & Apply Conditions
+          </h2>
+          <p class="section-subtitle">Calculate totals and set conditions (e.g., total sales > 1000)</p>
+          
+          <div id="aggregations"></div>
+          
+          <button id="btn-add-aggregation" class="btn-primary btn-small" style="margin-top: 1rem;">
+            ➕ Add Calculation
+          </button>
+        </section>
+
+        <!-- Actions Section -->
+        <section class="section actions-section">
+          <button id="btn-run-query" class="btn-primary">▶ Execute Query</button>
+          <button id="btn-save-config" class="btn-success">💾 Save Config</button>
+          <button id="btn-clear-all" class="btn-danger">🗑️ Clear All</button>
+        </section>
+
+        <!-- Results Section -->
+        <section class="section results-section">
+          <div class="results-header">
+            <h2 class="section-title"><span>📈</span> Results</h2>
+          </div>
+          
+          <div id="resultsContainer">
+            <div id="detailedResults">
+              <h3 class="results-subtitle">📋 Detailed Records</h3>
+              <div id="detailedTableContainer">
+                <div class="empty-state">
+                  <p>Run a query to see results here</p>
+                </div>
+              </div>
+            </div>
+            
+            <div id="aggregationResults">
+              <h3 class="results-subtitle">📊 Summary Data</h3>
+              <div id="aggregationTableContainer">
+                <div class="empty-state">
+                  <p>Aggregation results will appear here</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      
+      <!-- Saved Configs -->
+      <section id="savedConfigsSection" class="section saved-configs-section">
+        <h2 class="section-title"><span>💾</span> Saved Queries</h2>
+        <div id="savedConfigsContent">
+          <div class="loader" style="margin: 20px auto;"></div>
+        </div>
+      </section>
+
+      <!-- Query Preview Section -->
+      <section id="query-preview-section" class="section query-preview-section">
+        <h2 class="section-title"><span>🔍</span> Generated Query Preview</h2>
+        <p class="section-subtitle">Real-time preview of the SQL query being constructed</p>
+        <div class="code-preview-container">
+          <pre id="query-preview-content" class="code-preview">
+// Query preview will appear here...
+          </pre>
+        </div>
+      </section>
+    </div>
+
+    <pre id="out" style="display:none;"></pre> <!-- Hidden debug output -->
+
+    <!-- Scripts -->
+    <script src="js/app.js?v=2"></script>
+  </body>
+</html>

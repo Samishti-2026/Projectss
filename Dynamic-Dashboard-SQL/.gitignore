@@ -1,0 +1,38 @@
+# Dependency directories
+node_modules/
+
+# Environment variables
+.env
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+.project
+.settings/
+
+# Temporary test scripts
+analyze_db.js
+check_customer_data.js
+check_invoices.js
+run_all_tests.js
+test_customer_query.js
+test_mixed_filters.js
+data.json
